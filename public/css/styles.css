@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;/*altura de la pantalla*/
+}
+footer,header{
+    background-color: #6ACFC7;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: 100vh; /*Eje principal X*/
+    align-items: center; /*Eje principal Y*/
+    flex:1;
+}
+.data-container{
+    border: 1px solid rgb(245, 187, 242);
+    padding: 1em;
+    border-radius: .3em;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+.record{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .3rem;
+
+    
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button, .buttons a{
+    padding: .4rem;
+    border: none;
+    cursor: pointer;
+    background-color: #7d0173;
+    color: white;
+    border-radius: .3em;
+    margin: .3rem;
+    text-decoration: none;
+}
+.buttons a:hover{
+    background-color: #6ACFC7;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    /* background-image: radi-gradient(, #6ACFC7, #7d0173); */
+    background-image: radial-gradient(at bottom left , #e8c3f7e3, #6ACFC7);
+
+    /* background-color: #E5EDF1; */
+    color : rgb(5, 69, 94);
+    padding: 1rem;
+    height: 100%;
+    align-items: center;
+    
+    
+}
+.menu a{
+    color:  rgb(5, 69, 94);
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: rgb(255, 113, 201);
+    text-decoration: underline;
+    text-decoration-style: wavy ;
+}
+
+.menu li{
+    list-style: none;
+    margin: 0 1rem;
+    padding: 1rem;
+    
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    
+
+}
+.agregar {
+    display: flex;
+    flex-direction: row;
+    background-color: #7d0173;
+    color: white;
+    padding: .4rem;
+    border: none;
+    cursor: pointer;
+    border-radius: .3em;
+    position:fixed;
+    top: 38%;
+    left: 16%;
+    
+}
+
+.agregar:hover {
+    background-color: #6ACFC7;
+}
+
+.agregar a{
+    color:  rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
