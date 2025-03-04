@@ -5,10 +5,7 @@
         echo "ID:" . $id;
         echo "<br>";
         echo "Nombre:" . $nombre;
-        echo "<br>";
-        echo "Nombre:" . $nombre;
-        echo "<br>";
-        echo "Nombre:" . $nombre;
+        
         ?>
 
     </div>
