@@ -124,6 +124,33 @@ return  [
         "controller" => "App\Controller\ActividadController",
         "action" => "deleteActividad"
     ],
-    
+    "/tipoUsuario/index" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "index"
+    ],
+    "/tipoUsuario/new" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "new"
+    ],
+    "/tipoUsuario/create" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "create"
+    ],
+    "/tipoUsuario/view/(\d+)" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "view"
+    ],
+    "/tipoUsuario/edit/(\d+)" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "editTipoUsuario"
+    ],
+    "/tipoUsuario/update" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "updateTipoUsuario"
+    ],
+    "/tipoUsuario/delete/(\d+)" => [
+        "controller" => "App\Controller\TipoUsuarioController",
+        "action" => "deleteTipoUsuario"
+    ],
     
 ];
