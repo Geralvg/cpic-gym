@@ -33,15 +33,15 @@ class TipoUsuarioController extends BaseController{
 
     //Muestra el formulario para crear un nuevo rol
     public function new(){
-        $this->render("tipoUsuarioGym/newtipoUsuario.php");
+        $this->render("tipoUsuarioGym/newTipoUsuario.php");
     }
 
     //guarda los datos del formulario
     public function create(){
         $nombre = $_POST["txtNombre"] ?? null;
         if ($nombre) {
-            $objRol = new TipoUsuarioModel(null, $nombre);
-            $res = $objRol->save();
+            $objUsuario = new TipoUsuarioModel(null, $nombre);
+            $res = $objUsuario->save();
             if ($res) {
                 header("Location: /tipoUsuario/index");
 
@@ -59,7 +59,7 @@ class TipoUsuarioController extends BaseController{
            "id" => $usuario[0]->id,
            "nombre" => $usuario[0]->nombre
        ];
-         $this->render("tipoUsuarioGym/viewOnetipoUsuario.php", $data);
+         $this->render("tipoUsuarioGym/viewOneTipoUsuario.php", $data);
     }
 
     public function editTipoUsuario($id)
@@ -76,8 +76,8 @@ class TipoUsuarioController extends BaseController{
         if (isset($_POST["txtId"])) {
             $id = $_POST['txtId'] ?? null;
             $nombre = $_POST['txtNombre'] ?? null;
-            $objRolEdit = new TipoUsuarioModel($id, $nombre);
-            $res = $objRolEdit->editTipoUsuario();
+            $objUsuarioEdit = new TipoUsuarioModel($id, $nombre);
+            $res = $objUsuarioEdit->editTipoUsuario();
             print_r($res);
 
             if ($res) {
@@ -91,8 +91,8 @@ class TipoUsuarioController extends BaseController{
     
     public function deleteTipoUsuario($id)
     {
-        $objRol = new TipoUsuarioModel($id);
-        $res = $objRol->deleteTipoUsuario();
+        $objUsuario = new TipoUsuarioModel($id);
+        $res = $objUsuario->deleteTipoUsuario();
 
         if ($res) {
             header("Location: /tipoUsuario/index");
