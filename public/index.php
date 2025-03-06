@@ -6,6 +6,7 @@ require_once '../app/controller/rolController.php';
 require_once '../app/controller/centroController.php';
 require_once '../app/controller/programaController.php';
 require_once '../app/controller/actividadController.php';
+require_once '../app/controller/tipoUsuarioController.php';
 
 
 //acceder a lo que llegue en la url
