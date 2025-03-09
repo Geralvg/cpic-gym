@@ -154,7 +154,7 @@ return  [
     ],
     "/grupo/index" => [
         "controller" => "App\Controller\GrupoController",
-        "action" => "index"
+        "action" => "viewAll"
     ],
     "/grupo/new" => [
         "controller" => "App\Controller\GrupoController",

@@ -21,6 +21,7 @@
                     <li><a href="/programa/index">Programas</a></li>
                     <li><a href="/actividad/index">Actividades</a></li>
                     <li><a href="/tipoUsuario/index">Tipo usuario Gym</a></li>
+                    <li><a href="/grupo/index">Grupos</a></li>
                 </ul>
             </nav>
         </div>
