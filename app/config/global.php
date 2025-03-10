@@ -1,21 +1,21 @@
 <?php
-define("MAIN_APP_ROUTE", __DIR__."/../app/");
-define("DRIVER", "mysql");
-define("HOST", "localhost");
-define("DATABASE", "cpicgym");
-define("USERNAME", "root");
-define("PASSWORD", "");
-define("CHARSET", "uft8mb4");
-define("COLLATION", "utf8mb4_unicode_ci");
-
 // define("MAIN_APP_ROUTE", __DIR__."/../app/");
 // define("DRIVER", "mysql");
-// define("HOST", "sql213.infinityfree.com");
-// define("DATABASE", "if0_38446947_cpicgym");
-// define("USERNAME", "if0_38446947");
-// define("PASSWORD", "VMpeS8uk2cMOkj");
+// define("HOST", "localhost");
+// define("DATABASE", "cpicgym");
+// define("USERNAME", "root");
+// define("PASSWORD", "");
 // define("CHARSET", "uft8mb4");
 // define("COLLATION", "utf8mb4_unicode_ci");
+
+define("MAIN_APP_ROUTE", __DIR__."/../app/");
+define("DRIVER", "mysql");
+define("HOST", "sql213.infinityfree.com");
+define("DATABASE", "if0_38446947_cpicgym");
+define("USERNAME", "if0_38446947");
+define("PASSWORD", "VMpeS8uk2cMOkj");
+define("CHARSET", "uft8mb4");
+define("COLLATION", "utf8mb4_unicode_ci");
 
 
 
