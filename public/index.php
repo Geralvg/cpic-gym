@@ -9,6 +9,7 @@ require_once '../app/controller/actividadController.php';
 require_once '../app/controller/tipoUsuarioController.php';
 require_once '../app/controller/grupoController.php';
 require_once '../app/controller/usuarioController.php';
+require_once '../app/controller/registroIngresoController.php';
 
 
 //acceder a lo que llegue en la url
