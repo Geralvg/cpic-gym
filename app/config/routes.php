@@ -180,5 +180,33 @@ return  [
         "controller" => "App\Controller\GrupoController",
         "action" => "deleteGrupo"
     ],
+    "/usuario/index" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "viewAll"
+    ],
+    "/usuario/new" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "new"
+    ],
+    "/usuario/create" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "create"
+    ],
+    "/usuario/view/(\d+)" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "viewOneUsuario"
+    ],
+    "/usuario/edit/(\d+)" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "editUsuario"
+    ],
+    "/usuario/update" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "updateUsuario"
+    ],
+    "/usuario/delete/(\d+)" => [
+        "controller" => "App\Controller\UsuarioController",
+        "action" => "deleteUsuario"
+    ],
     
 ];
