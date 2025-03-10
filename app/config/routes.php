@@ -208,5 +208,34 @@ return  [
         "controller" => "App\Controller\UsuarioController",
         "action" => "deleteUsuario"
     ],
+
+    "/registroIngreso/index" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "viewAll"
+    ],
+    "/registroIngreso/new" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "new"
+    ],
+    "/registroIngreso/create" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "create"
+    ],
+    "/registroIngreso/view/(\d+)" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "viewOneRegistroIngreso"
+    ],
+    "/registroIngreso/edit/(\d+)" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "editRegistroIngreso"
+    ],
+    "/registroIngreso/update" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "updateRegistroIngreso"
+    ],
+    "/registroIngreso/delete/(\d+)" => [
+        "controller" => "App\Controller\RegistroIngresoController",
+        "action" => "deleteRegistroIngreso"
+    ],
     
 ];

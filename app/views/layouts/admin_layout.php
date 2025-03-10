@@ -23,6 +23,7 @@
                     <li><a href="/tipoUsuario/index">Tipo usuario Gym</a></li>
                     <li><a href="/grupo/index">Grupos</a></li>
                     <li><a href="/usuario/index">Usuarios</a></li>
+                    <li><a href="/registroIngreso/index">Registro Ingreso</a></li>
                 </ul>
             </nav>
         </div>
