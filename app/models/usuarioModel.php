@@ -29,15 +29,45 @@ class UsuarioModel extends BaseModel
         private ?string $telefonoEmer = null,
         private ?string $password = null,
         private ?string $observaciones = null,
-        private ?string $fkidRol = null,
-        private ?string $fkidGrupo = null,
-        private ?string $fkidCentroForm = null,
-        private ?string $fkidTipoUserGym = null,
+        private ?int $fkidRol = null,
+        private ?int $fkidGrupo = null,
+        private ?int $fkidCentroForm = null,
+        private ?int $fkidTipoUserGym = null,
     ) {
         parent::__construct();
         $this->table = "usuario";
     }
 
+    public function validarLogin($email, $password){
+        try {
+            $sql = "SELECT * FROM usuario WHERE email=:email";
+            $statement = $this->dbConnection->prepare($sql);
+            $statement->bindParam(":email", $email);
+            $statement -> execute();
+            $resultSet = [];
+            while ($row = $statement->fetch(PDO::FETCH_OBJ)){
+                $resultSet[] = $row;
+            }
+
+            if (count($resultSet)>0) {
+                // Recuperamos de la BD, la contraseña encriptada
+                $hashed = $resultSet[0]->password;
+                if (password_verify($password, $hashed)) {
+                    //los datos de usuario y contraseña son correctos
+                    $_SESSION['rol'] = $resultSet[0]->fkidRol;
+                    $_SESSION['nombre'] = $resultSet[0]->nombre;
+                    $_SESSION['id'] = $resultSet[0]->id;
+                    $_SESSION['timeout'] = time();
+                    session_regenerate_id();
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        } catch (PDOException $ex) {
+            echo "Error validando login".$ex->getMessage();
+        }
+    }
     public function getAllUsuario()
     {
         $sql = "SELECT usuario.id, usuario.nombre,usuario.tipoDoc,usuario.documento,usuario.fechaNac,usuario.email,usuario.genero,usuario.estado,usuario.telefono,usuario.eps,usuario.tipoSangre,usuario.peso,usuario.estatura,usuario.telefonoEmer,usuario.password,usuario.observaciones,rol.nombre AS rol, grupo.ficha AS grupo, centroformacion.nombre AS centro ,tipousuariogym.nombre AS tipoUsuario
@@ -76,12 +106,13 @@ INNER JOIN tipousuariogym ON usuario.fkidTipoUserGym = tipousuariogym.id";
         $sql->bindParam(":peso", $this->peso, PDO::PARAM_STR);
         $sql->bindParam(":estatura", $this->estatura, PDO::PARAM_STR);
         $sql->bindParam(":telefonoEmer", $this->telefonoEmer, PDO::PARAM_STR);
-        $sql->bindParam(":password", $this->password, PDO::PARAM_STR);
+        $passwordHashed = password_hash($this->password, PASSWORD_DEFAULT);
+        $sql->bindParam(":password", $passwordHashed, PDO::PARAM_STR);
         $sql->bindParam(":observaciones", $this->observaciones, PDO::PARAM_STR);
-        $sql->bindParam(":fkidRol", $this->fkidRol, PDO::PARAM_STR);
-        $sql->bindParam(":fkidGrupo", $this->fkidGrupo, PDO::PARAM_STR);
-        $sql->bindParam(":fkidCentroForm", $this->fkidCentroForm, PDO::PARAM_STR);
-        $sql->bindParam(":fkidTipoUserGym", $this->fkidTipoUserGym, PDO::PARAM_STR);
+        $sql->bindParam(":fkidRol", $this->fkidRol, PDO::PARAM_INT);
+        $sql->bindParam(":fkidGrupo", $this->fkidGrupo, PDO::PARAM_INT);
+        $sql->bindParam(":fkidCentroForm", $this->fkidCentroForm, PDO::PARAM_INT);
+        $sql->bindParam(":fkidTipoUserGym", $this->fkidTipoUserGym, PDO::PARAM_INT);
 
 
         // 4. Ejecuta la consulta
@@ -173,10 +204,10 @@ INNER JOIN tipousuariogym ON usuario.fkidTipoUserGym = tipousuariogym.id";
         $statement->bindParam(":telefonoEmer", $this->telefonoEmer, PDO::PARAM_STR);
         $statement->bindParam(":password", $this->password, PDO::PARAM_STR);
         $statement->bindParam(":observaciones", $this->observaciones, PDO::PARAM_STR);
-        $statement->bindParam(":fkidRol", $this->fkidRol, PDO::PARAM_STR);
-        $statement->bindParam(":fkidGrupo", $this->fkidGrupo, PDO::PARAM_STR);
-        $statement->bindParam(":fkidCentroForm", $this->fkidCentroForm, PDO::PARAM_STR);
-        $statement->bindParam(":fkidTipoUserGym", $this->fkidTipoUserGym, PDO::PARAM_STR);
+        $statement->bindParam(":fkidRol", $this->fkidRol, PDO::PARAM_INT);
+        $statement->bindParam(":fkidGrupo", $this->fkidGrupo, PDO::PARAM_INT);
+        $statement->bindParam(":fkidCentroForm", $this->fkidCentroForm, PDO::PARAM_INT);
+        $statement->bindParam(":fkidTipoUserGym", $this->fkidTipoUserGym, PDO::PARAM_INT);
 
 
         $resp = $statement->execute();

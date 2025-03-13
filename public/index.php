@@ -10,6 +10,7 @@ require_once '../app/controller/tipoUsuarioController.php';
 require_once '../app/controller/grupoController.php';
 require_once '../app/controller/usuarioController.php';
 require_once '../app/controller/registroIngresoController.php';
+require_once '../app/controller/loginController.php';
 
 
 //acceder a lo que llegue en la url
@@ -33,6 +34,7 @@ foreach ($routesList as $route => $routeConfig) {
 if ($matchedRoute) {
     $controllerName = $matchedRoute['controller'];
     $actionName = $matchedRoute['action'];
+
     if (class_exists($controllerName) && method_exists($controllerName, $actionName)) {
         //Captura los parametros que llegan de la url
         $parameters = array_slice($matches, 1);

@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 class BaseController{
-
     protected string $layout = "main_layout";
 
     public function render($view , $data=null){

@@ -12,6 +12,13 @@ return  [
         "controller" => "App\Controller\HomeController",
         "action" => "saludar"
     ],
+    /* Rutas Login*/ 
+    "/login/init"=> [
+        "controller" => "App\Controller\loginController",
+        "action" => "initLogin"
+       
+    ],
+
     "/rol/index" => [
         "controller" => "App\Controller\RolController",
         "action" => "index"
