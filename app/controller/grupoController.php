@@ -15,9 +15,8 @@ require_once MAIN_APP_ROUTE . "../models/grupoModel.php";
 class GrupoController extends BaseController
 {
 
-    public function __construct()
-    {
-        $this->layout = "admin_layout";
+    public function __construct(){
+        $this->layout = "dashboard_layout";
     }
 
     public function index()

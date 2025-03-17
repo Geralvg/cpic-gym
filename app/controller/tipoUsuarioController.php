@@ -8,9 +8,8 @@ require_once MAIN_APP_ROUTE."../models/tipoUsuarioModel.php";
 
 class TipoUsuarioController extends BaseController{
 
-    public function __construct()
-    {
-        $this->layout = "admin_layout";
+    public function __construct(){
+        $this->layout = "dashboard_layout";
     }
     public function index(){
         // echo "<br>CONTROLLER > RolController";

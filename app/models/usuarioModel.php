@@ -58,7 +58,8 @@ class UsuarioModel extends BaseModel
                     $_SESSION['nombre'] = $resultSet[0]->nombre;
                     $_SESSION['id'] = $resultSet[0]->id;
                     $_SESSION['timeout'] = time();
-                    session_regenerate_id();
+                    session_regenerate_id(true);
+                    header("Location: /programa/index");
                     return true;
                 }else{
                     return false;

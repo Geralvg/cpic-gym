@@ -11,7 +11,7 @@ require_once MAIN_APP_ROUTE."../models/centroModel.php";
 class CentroController extends BaseController{
 
     public function __construct(){
-        $this->layout = "admin_layout";
+        $this->layout = "dashboard_layout";
     }
 
     public function index(){
