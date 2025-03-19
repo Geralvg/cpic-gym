@@ -29,6 +29,11 @@
                         <li><a href="/actividad/index"><i class="fas fa-running"></i><span>Actividades</span></a></li>
                         <li><a href="/registroIngreso/index"><i class="fas fa-sign-in-alt"></i><span>Registro Ingreso</span></a></li>
                         <li><a href=""><i class="fas fa-chart-line"></i><span>Control Progreso</span></a></li>
+                        <li><a href="/login/logout">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Cerrar Sesion (<?php echo $_SESSION['nombre']; ?>)</span>
+                        </a>
+                    </li>
                     </ul>
                 </nav>
             </div>

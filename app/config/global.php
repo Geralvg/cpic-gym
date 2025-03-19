@@ -1,7 +1,8 @@
 <?php
 $enviroment = "local";
 define("MAIN_APP_ROUTE", __DIR__."/../app/");
-if ($enviroment=="local"){
+define("INACTIVE_TIME", 1);
+if ($enviroment == "local"){
     define("DRIVER", "mysql");
     define("HOST", "localhost");
     define("DATABASE", "cpicgym");

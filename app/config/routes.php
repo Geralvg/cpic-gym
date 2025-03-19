@@ -18,6 +18,17 @@ return  [
         "action" => "initLogin"
        
     ],
+    "/login/test"=> [
+        "controller" => "App\Controller\loginController",
+        "action" => "testHash"
+       
+    ],
+
+    "/login/logout"=> [
+        "controller" => "App\Controller\loginController",
+        "action" => "logout"
+       
+    ],
 
     "/rol/index" => [
         "controller" => "App\Controller\RolController",
